@@ -6,13 +6,13 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:15:24 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 01:21:53 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:14:52 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	free_stack1(t_stack **x)
+void	free_stack1(t_stack **x)
 {
 	t_stack	*tmp;
 
@@ -22,19 +22,18 @@ int	free_stack1(t_stack **x)
 		*x = (*x)->next;
 		free(tmp);
 	}
-	return (0);
 }
 
 void	ft_error1(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	free_error1(t_stack **a)
 {
-	ft_error1();
 	free_stack1(a);
+	ft_error1();
 }
 
 void	free_exit1(t_stack **a)
@@ -60,4 +59,17 @@ int	is_stack_sorted1(t_stack *a)
 		a = a->next;
 	}
 	return (1);
+}
+
+void	free_str2(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i] != '\0')
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }

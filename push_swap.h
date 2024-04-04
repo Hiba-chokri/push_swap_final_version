@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 01:50:33 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 13:05:59 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:51:04 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int		check(char *argv[]);
 long	ft_atoi(char *nptr);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 int	ft_isalpha(int c);
+void	free_str1(char **tab);
 void	sort4(t_stack **a, t_stack **b);
 int		find_max(t_stack **x);
 long	find_target_a(int node, t_stack *a);

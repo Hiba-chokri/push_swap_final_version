@@ -1,7 +1,7 @@
 NAME = push_swap
 NAME1 = checker
 
-CC = cc -fsanitize=address -g3
+CC = cc #-fsanitize=address -g3
 
 #CFLAGS = -Wall -Wextra -Werror 
 

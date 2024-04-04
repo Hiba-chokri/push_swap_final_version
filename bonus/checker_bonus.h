@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:43:41 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 00:37:27 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:11:52 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ void	checker(t_stack **a, t_stack **b);
 int	check_double1(t_stack *a);
 int	check1(char *argv[]);
 void	free_error1(t_stack **a);
-int	free_stack1(t_stack **x);
+void	free_stack1(t_stack **x);
 int	is_not_integer1(char *argv[]);
+void	free_str2(char **tab);
 int	count_spaces1(char *argv[]);
+void	ft_split_args(t_stack **a, int argc, char *argv[]);
 #endif

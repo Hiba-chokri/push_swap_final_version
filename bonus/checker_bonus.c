@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:59:23 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 13:06:28 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:06:46 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_split_args2(t_stack **a, int argc, char *argv[])
 			ft_lstadd_back(a, new);
 			j++;
 		}
+		free_str2(tab);
 		i++;
 	}
 }
@@ -103,9 +104,9 @@ void	checker(t_stack **a, t_stack **b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-		
     free_stack1(a);
     free_stack1(b);
+	system("leaks checker");
 }
 
 int main(int argc, char *argv[])

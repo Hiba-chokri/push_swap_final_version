@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:38:01 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 13:04:00 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:25:35 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,23 +112,11 @@ long find_target_a(int node, t_stack *a)
 }
 void calculate_best_target_b_to_a(t_stack **a, t_stack **b, long *best_target, int *node)
 {
-    // long target;//, cost;
     t_stack *current = *b;
 
-    // while (current != NULL)
-    // {
         *best_target = find_target_a(current->data, *a);
         if (*best_target == LONG_MAX)
            *best_target = find_min(*a);
-    //     cost = calculate_cost1(*a, *b, current->data, target);
-    //     if (cost < *min_cost)
-    //     {
-    //         *best_target = target;
-    //         *min_cost = cost;
-    //         *node = current->data;
-    //     }
-    //     current = current->next;
-    // }
 }
 
 void rotate_to_best_target_b_to_a(t_stack **a, t_stack **b, int best_target, int node)

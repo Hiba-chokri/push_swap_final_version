@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 01:58:53 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 13:02:26 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:15:09 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_split_args(t_stack **a, int argc, char *argv[])
 			new = ft_lstnew(ft_atoi(tab[j]));
 			ft_lstadd_back(a, new);
 		}
+		free_str1(tab);
 	}
 }
 
@@ -100,6 +101,8 @@ void	handle_args_and_sort_stacks(int argc, char *argv[], t_stack **a,
 			while (ft_lstsize(*b) > 0)
 				from_b_to_a(a, b);
 			check_min(a);
+			free_stack(a);
+			free_stack(b);
 		}
 	}
 }

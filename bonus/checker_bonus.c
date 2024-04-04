@@ -6,20 +6,12 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:59:23 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 14:06:46 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:11:56 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	handling_errors(char *line, t_stack **a, t_stack **b)
-{
-	write(2, "Error\n", 6);
-	free_stack1(a);
-	free_stack1(b);
-	free(line);
-	exit(1);
-}
 void	ft_split_args2(t_stack **a, int argc, char *argv[])
 {
 	t_stack	*new;
@@ -27,9 +19,9 @@ void	ft_split_args2(t_stack **a, int argc, char *argv[])
 	int		j;
 	char	**tab;
 
-	i = 1;
+	i = 0;
 	new = NULL;
-	while (i < argc)
+	while (++i < argc)
 	{
 		j = 0;
 		tab = ft_split(argv[i], ' ');
@@ -46,7 +38,6 @@ void	ft_split_args2(t_stack **a, int argc, char *argv[])
 			j++;
 		}
 		free_str2(tab);
-		i++;
 	}
 }
 
@@ -104,29 +95,28 @@ void	checker(t_stack **a, t_stack **b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-    free_stack1(a);
-    free_stack1(b);
-	system("leaks checker");
+	free_stack1(a);
+	free_stack1(b);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    t_stack *a;
-    t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
-    if (argc < 2)
-        exit(0);
-    a = NULL;
-    b = NULL;
-    if (!check_arg1(argv))
-        free_error1(&a);
-    else
-    {
-        ft_split_args2(&a, argc, argv);
+	if (argc < 2)
+		exit(0);
+	a = NULL;
+	b = NULL;
+	if (!check_arg1(argv))
+		free_error1(&a);
+	else
+	{
+		ft_split_args2(&a, argc, argv);
 		if (!check_double1(a))
 			free_error1(&a);
 		else
-    		checker(&a,&b);
+			checker(&a, &b);
 	}
 	return (0);
 }

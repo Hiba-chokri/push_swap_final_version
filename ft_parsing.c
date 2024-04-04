@@ -83,7 +83,7 @@ int	check(char *argv[])
 
 int	check_double(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	while (a != NULL)
 	{

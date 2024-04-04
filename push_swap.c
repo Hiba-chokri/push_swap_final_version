@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 01:58:53 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 14:15:09 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:08:50 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	handle_args_and_sort_stacks(int argc, char *argv[], t_stack **a,
 			free_error(a);
 	}
 	if (is_stack_sorted(*a))
-			free_stack(a);
+		free_stack(a);
 	else
 	{
 		if (ft_lstsize(*a) == 2)
@@ -92,18 +92,7 @@ void	handle_args_and_sort_stacks(int argc, char *argv[], t_stack **a,
 		else if (ft_lstsize(*a) == 3)
 			sort3(a);
 		else
-		{
-			push_b(a, b);
-			push_b(a, b);
-			while (ft_lstsize(*a) > 3)
-				from_a_to_b(a, b);
-			sort3(a);
-			while (ft_lstsize(*b) > 0)
-				from_b_to_a(a, b);
-			check_min(a);
-			free_stack(a);
-			free_stack(b);
-		}
+			pushing(a, b);
 	}
 }
 

@@ -1,9 +1,9 @@
 NAME = push_swap
 NAME1 = checker
 
-CC = cc #-fsanitize=address -g3
+CC = cc -fsanitize=address -g3
 
-#CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror 
 
 SRC = push_swap.c sort_smalls.c actions1.c find_cost_index.c ft_parsing.c \
     a_to_b.c b_to_a.c actions2.c actions3.c free_exit.c min_max_index.c \

@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:11:51 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 02:16:52 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:40:29 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	check1(char *argv[])
 
 int	check_double1(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	while (a != NULL)
 	{
@@ -99,4 +99,13 @@ int	check_double1(t_stack *a)
 		a = a->next;
 	}
 	return (1);
+}
+
+void	handling_errors(char *line, t_stack **a, t_stack **b)
+{
+	write(2, "Error\n", 6);
+	free_stack1(a);
+	free_stack1(b);
+	free(line);
+	exit(1);
 }

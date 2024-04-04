@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:15:24 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 14:14:52 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:22:10 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,4 @@ int	is_stack_sorted1(t_stack *a)
 		a = a->next;
 	}
 	return (1);
-}
-
-void	free_str2(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i] != '\0')
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
 }

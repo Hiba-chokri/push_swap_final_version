@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:56:03 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/03 23:38:05 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:29:04 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	push_a_bonus(t_stack **a, t_stack **b)
 		*a = tmp;
 	}
 }
+
 void	push_b_bonus(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;

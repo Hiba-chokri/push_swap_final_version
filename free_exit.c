@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:35:17 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/04 14:04:26 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:01:16 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	free_stack(t_stack **x)
 	}
 	return (0);
 }
+
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
@@ -52,4 +53,4 @@ void	free_str1(char **tab)
 		i++;
 	}
 	free(tab);
-}  
+}

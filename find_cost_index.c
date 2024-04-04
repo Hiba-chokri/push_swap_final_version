@@ -6,7 +6,7 @@
 /*   By: hichokri <hichokri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:06:57 by hichokri          #+#    #+#             */
-/*   Updated: 2024/04/03 07:21:36 by hichokri         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:11:21 by hichokri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,18 @@ int	check_node_pos(int node, t_stack *a)
 		a = a->next;
 	}
 	return (i <= size / 2);
+}
+
+void	pushing(t_stack **a, t_stack **b)
+{
+	push_b(a, b);
+	push_b(a, b);
+	while (ft_lstsize(*a) > 3)
+		from_a_to_b(a, b);
+	sort3(a);
+	while (ft_lstsize(*b) > 0)
+		from_b_to_a(a, b);
+	check_min(a);
+	free_stack(a);
+	free_stack(b);
 }
